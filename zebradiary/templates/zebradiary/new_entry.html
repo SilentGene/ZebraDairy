@@ -1,0 +1,14 @@
+{% extends "zebradiary/base.html" %}
+
+{% block content %}
+
+<p><a href="{% url 'zebradiary:topic' topic.id %}">{{ topic }}</a></p>
+
+<p>想说点什么...</p>
+<form action="{% url 'zebradiary:new_entry' topic.id %}" method='post'>
+	{% csrf_token %}
+	{{ form.as_p }}
+	<button name='submit'>保存</button>
+</form>
+
+{% endblock content %}

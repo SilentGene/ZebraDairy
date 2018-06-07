@@ -1,0 +1,27 @@
+{% load bootstrap3 %}
+
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+	<title>Zebra Diary</title>
+
+	{% bootstrap_css %}
+	{% bootstrap_javascript %}
+</head>
+<body>
+<header>
+	<div>
+	<a href = "{% url 'zebradiary:index' %}">Zebra Diary</a>
+	<a href = "{% url 'zebradiary:topics' %}">Topics</a>
+	</div>
+</header>
+<div class="container">
+	<div>
+		{% block content %}{% endblock content %}
+	</div>
+</div>
+</body>
+</html>

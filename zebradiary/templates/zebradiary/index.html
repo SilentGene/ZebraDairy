@@ -1,0 +1,17 @@
+{% extends "zebradiary/base.html" %}
+
+{% block content %}
+<div>
+	<p class="text-center">欲把相思说似谁，<br />浅情人不知。</p>
+</div>
+
+<ul>
+	{% for topic in topics %}
+	<li>
+	<a href="{% url 'zebradiary:topic' topic.id %}">{{topic}}</a>
+	</li>
+	{% empty %}
+	<li>No topics have been added yet.</li>
+	{% endfor %}
+</ul>
+{% endblock content %}
